@@ -1,0 +1,24 @@
+{
+    "name": "@crowdspace/common",
+    "version": "0.0.1",
+    "description": "shared functionalties for crowdspace \"social-media\" app.",
+    "main": "dist/index.js",
+    "type": "module",
+    "author": "Ashkar2023 <muhammedashkar2023@gmail.com>,",
+    "license": "MIT",
+    "scripts": {
+        "build": "rimraf dist && tsc && tsc-alias"
+    },
+    "private": true,
+    "dependencies": {
+        "express": "^4.21.0",
+        "jose": "^5.9.2",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.21",
+        "rimraf": "^6.0.1",
+        "tsc-alias": "^1.8.10",
+        "typescript": "^5.6.2"
+    }
+}

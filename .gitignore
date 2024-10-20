@@ -1,0 +1,10 @@
+node_modules/
+dist/
+
+yarn.lock
+
+.env.development
+.development.env
+.env.production
+.production.env
+.env
