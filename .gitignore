@@ -1,5 +1,8 @@
 node_modules/
 dist/
+lib/
+logs/
+.npmrc
 
 yarn.lock
 

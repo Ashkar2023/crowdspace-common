@@ -10,7 +10,7 @@ export type IssuerAndAudience = {
 export const encodeSecret = (secret: string): Uint8Array =>
     new TextEncoder().encode(secret);
 
-export async function sign({ payload, secret, tokenType }: {
+export async function signJWT({ payload, secret, tokenType }: {
     payload: JWTPayload,
     secret: string,
     tokenType: TokenType
@@ -42,7 +42,7 @@ export async function sign({ payload, secret, tokenType }: {
     return jwt;
 }
 
-export async function verify({ jwt, secret, issuerAndAudience }: {
+export async function verifyJWT({ jwt, secret, issuerAndAudience }: {
     jwt: string,
     secret: string,
     issuerAndAudience: IssuerAndAudience,
@@ -58,17 +58,17 @@ export async function verify({ jwt, secret, issuerAndAudience }: {
         return true;
 
     } catch (error) {
-        if (error instanceof Error) console.log("error from token handler :\n", error.message);
+        if (error instanceof Error) console.log("error from @common/token handler :\n", error.message);
         throw error
     }
 
 }
 
-export function validate(token: string) {
+export function validateJWT(token: string) {
     throw new Error("Validate token method not implemented!")
 }
 
-export function decode(jwt: string) {
+export function decodeJWT(jwt: string) {
     const decoded = decodeJwt(jwt);
 
     return decoded;

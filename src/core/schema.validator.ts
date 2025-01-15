@@ -1,6 +1,6 @@
 import { ISchemaValidator } from "@interfaces/schema-validator.interface.js";
 import { ZodType, ZodError } from "zod";
-import { ValidationError } from "./error.handler.js";
+import { ValidationError } from "./extended.errors.js";
 
 export class SchemaValidator implements ISchemaValidator {
     validate<T>(input: T, schema: ZodType<T>): boolean | never {

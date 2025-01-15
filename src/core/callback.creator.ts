@@ -7,7 +7,7 @@ export function createCallback(controller: Function) : RequestHandler {
             const response = (await controller(req)) as IResponse;
 
             res.status(response.statusCode)
-                .header(response.headers)
+                .header(response.headers) //Check if header is only setting 1 header or multiple
                 .json({
                     success: true,
                     body: response.body,

@@ -11,20 +11,22 @@
         "declaration": true,
         "isolatedModules": true,
         "rootDir": "./src",
-        "outDir": "dist",
+        "outDir": "lib",
         "baseUrl": ".",
         "paths": {
             "@interfaces/*":["src/interfaces/*"],
-            "@lib/*":["src/lib/*"],
+            "@core/*":["src/core/*"],
             "@util/*":["src/util/*"],
+            "~types/*":["src/types/*"],
             "@constants/*":["src/constants/*"],
-        }
+            "@config/*":["src/config/*"],
+        },
+        "resolveJsonModule": true
     },
     "tsc-alias":{
         "verbose":"false",
         "resolveFullPaths":true,
-
     },
-    "include": ["src", "src/lib/.validator.ts"],
+    "include": ["src", "src/core/.validator.ts"],
     "exclude": ["node_modules"]
 }

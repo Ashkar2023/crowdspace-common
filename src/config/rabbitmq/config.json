@@ -1,0 +1,36 @@
+{
+    "queues": {
+        "chatService": "chat-queue",
+        "userService": "user-queue",
+        "contentService": "content-queue",
+        "mediaService": "media-queue"
+    },
+    "exchanges": {
+        "contentDirectExchange": {
+            "name": "content-exchange",
+            "type": "direct"
+        },
+        "notificationFanoutExchange": {
+            "name": "notification-exchange",
+            "type": "fanout"
+        }
+    },
+    "routingKeys": {
+        "chatService": {
+            "notificationFanoutExchange": "",
+            "contentDirectExchange": "content.chat"
+        },
+        "userService": {
+            "notificationFanoutExchange": "",
+            "contentDirectExchange": "content.user"
+        },
+        "contentService": {
+            "notificationFanoutExchange": "",
+            "contentDirectExchange": "content.content"
+        },
+        "mediaService": {
+            "notificationFanoutExchange": "",
+            "contentDirectExchange": "content.media"
+        }
+    }
+}

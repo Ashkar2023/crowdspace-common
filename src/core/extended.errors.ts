@@ -1,3 +1,5 @@
+import { TokenErrorType } from "@constants/_token.error.js";
+
 /**
  * @class AppError
  * @description Base class for all application-specific errors.
@@ -29,8 +31,8 @@ export class AppError extends Error {
  * @param {number} [statusCode=400] - The HTTP status code (400 - Bad Request).
  */
 export class BadRequestError extends AppError {
-    constructor(message: string = "Bad request", statusCode = 400) {
-        super(message, statusCode);
+    constructor(message: string = "Bad request", statusCode: number = 400, error?: "banned") {
+        super(message, statusCode, {}, error);
     }
 }
 
@@ -62,6 +64,7 @@ export class UnauthorizedError extends AppError {
     }
 }
 
+
 /**
  * @class TokenError
  * @description Represents a 401 Token-related error.
@@ -74,7 +77,7 @@ export class TokenError extends AppError {
     constructor(
         message: string,
         statusCode: number = 401,
-        public error: "invalid_access" | "invalid_refresh"
+        public error: TokenErrorType
     ) {
         super(message, statusCode, undefined, error);
         this.error = error;
@@ -89,7 +92,7 @@ export class TokenError extends AppError {
  * @param {number} [statusCode=500] - The HTTP status code (500 - Internal Server Error).
  */
 export class InternalServerError extends AppError {
-    constructor(message: string = "Internal Server error", statusCode = 500) {
+    constructor(message: string = "Internal Server error", statusCode: number = 500) {
         super(message, statusCode);
     }
 }
@@ -101,8 +104,15 @@ export class InternalServerError extends AppError {
  * @param {string} [message="Input Validation Error"] - The error message.
  * @param {number} [statusCode=400] - The HTTP status code (400 - Bad Request).
  */
-export class ValidationError extends AppError{
-    constructor(message: string = "Input Validation Error", statusCode = 400) {
+export class ValidationError extends AppError {
+    constructor(message: string = "Input Validation Error", statusCode: number = 400) {
         super(message, statusCode);
     }
-} 
+}
+
+
+export class DatabaseOpError extends AppError {
+    constructor(message: string = "Database Operation Error", statusCode: number = 503) {
+        super(message, statusCode);
+    }
+}
