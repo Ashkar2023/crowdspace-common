@@ -1,6 +1,6 @@
 {
     "name": "@cr0wdspace/common",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "shared functionalties for crowdspace \"social-media\" app.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
