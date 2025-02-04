@@ -116,3 +116,21 @@ export class DatabaseOpError extends AppError {
         super(message, statusCode);
     }
 }
+
+
+/**
+ * Represents an error that occurs when an expected environment variable is not found or has an invalid value.
+ * 
+ * @extends {Error}
+ */
+export class EnvNotFoundError extends Error {
+    /**
+     * Creates an instance of EnvNotFoundError.
+     * 
+     * @param {string} key - The key of the environment variable that was not found or has an invalid value.
+     * @param {string} service - The name of the service that requires the environment variable.
+     */
+    constructor(key: string, service: string) {
+        super(`key ${key} has invalid ENV value from ${service}`);
+    }
+}

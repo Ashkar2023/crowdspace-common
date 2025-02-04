@@ -1,6 +1,6 @@
 {
-    "name": "@crowdspace/common",
-    "version": "0.0.1",
+    "name": "@cr0wdspace/common",
+    "version": "0.0.2",
     "description": "shared functionalties for crowdspace \"social-media\" app.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -11,7 +11,7 @@
         "build": "rimraf dist && tsc && tsc-alias",
         "dev": "echo dev-script-from-common"
     },
-    "private": true,
+    "private": false,
     "dependencies": {
         "amqplib": "^0.10.4",
         "express": "^4.21.0",
@@ -25,5 +25,11 @@
         "tsc-alias": "^1.8.10",
         "typescript": "^5.6.2"
     },
-    "repository": "https://github.com/Ashkar2023/crowdspace-common.git"
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cr0wdspace/common.git"
+    }
 }

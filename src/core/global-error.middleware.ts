@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { AppError } from "./extended.errors.js";
+import { AppError, EnvNotFoundError } from "./extended.errors.js";
 
 
 export function globalErrorHadler(err: Error, req: Request, res: Response, next: NextFunction): void {
@@ -15,6 +15,9 @@ export function globalErrorHadler(err: Error, req: Request, res: Response, next:
             body: err.body || null,
             error: err.error
         })
+    } else if(err instanceof EnvNotFoundError){
+        console.log("application gonna crash due to invalid Env's")
+        throw err
     } else {
         res.status(500).json({
             success: false,

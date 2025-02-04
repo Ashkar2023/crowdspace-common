@@ -9,6 +9,7 @@ export * from "@core/object.cleaner.js"
 export * from "@core/generateOtp.js"
 export * from "@core/rabbit/index.js"
 export * from "@core/basicUser.utils.js"
+export * from "@core/env.validator.js"
 
 export * from "@interfaces/response.interface.js"
 export * from "@interfaces/schema-validator.interface.js"
