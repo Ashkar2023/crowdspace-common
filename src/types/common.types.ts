@@ -4,3 +4,8 @@ export interface IBasicUser {
     avatar: string,
     _id: string
 }
+
+export enum FollowStatus {
+    active = 'active',
+    pending = 'pending'
+};
