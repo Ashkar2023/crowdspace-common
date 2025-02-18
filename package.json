@@ -1,6 +1,6 @@
 {
     "name": "@cr0wdspace/common",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "shared functionalties for crowdspace \"social-media\" app.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -27,9 +27,5 @@
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/cr0wdspace/common.git"
     }
 }
