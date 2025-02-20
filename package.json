@@ -9,7 +9,8 @@
     "license": "MIT",
     "scripts": {
         "build": "rimraf dist && tsc && tsc-alias",
-        "dev": "echo dev-script-from-common"
+        "dev": "echo dev-script-from-common",
+        "prepublishOnly": "npm run build"
     },
     "private": false,
     "dependencies": {
