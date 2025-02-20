@@ -7,12 +7,17 @@ export enum consumerEvents {
 
     avatar_updated="AVATAR_UPDATED",
 
-    post_deleted="POST_DELETED",
-    
     new_post="NEW_POST",
+    delete_post="DELETE_POST",
+    
     new_comment = "NEW_COMMENT",
+    delete_comment = "DELETE_COMMENT",
+
+    new_message = "NEW_MESSAGE",
+    delete_message = "DELETE_MESSAGE",
+
     new_like = "NEW_LIKE",
-    new_message = "NEW_message",
+    unlike = "UNLIKE",
     
     follow_request = "FOLLOW_REQUEST",
     follow_req_accepted = "FOLLOW_REQUEST_ACCEPTED",
