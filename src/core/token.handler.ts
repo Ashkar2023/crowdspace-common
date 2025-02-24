@@ -19,6 +19,7 @@ export async function signJWT({ payload, secret, tokenType }: {
 
     const REFRESH_TOKEN_SPAN = "1 week";
     const ACCESS_TOKEN_SPAN = "5 minutes";
+    const RESET_TOKEN_SPAN = "3 minutes"
 
     let currentSpan: string;
 
@@ -28,6 +29,9 @@ export async function signJWT({ payload, secret, tokenType }: {
             break;
         case "ACCESS":
             currentSpan = ACCESS_TOKEN_SPAN;
+            break;
+        case "RESET":
+            currentSpan = REFRESH_TOKEN_SPAN;
             break;
         default:
             throw new Error("Invalid Token Type")
