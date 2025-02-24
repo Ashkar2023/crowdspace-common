@@ -1,6 +1,6 @@
 import { SignJWT, jwtVerify, JWTPayload, decodeJwt } from "jose"
 
-export type TokenType = "ACCESS" | "REFRESH";
+export type TokenType = "ACCESS" | "REFRESH" | "RESET";
 export type IssuerAndAudience = {
     issuer: string,
     audience: string
