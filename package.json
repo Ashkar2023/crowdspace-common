@@ -1,6 +1,6 @@
 {
     "name": "@cr0wdspace/common",
-    "version": "1.12.0",
+    "version": "1.12.1",
     "description": "shared functionalties for crowdspace \"social-media\" app.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -14,7 +14,7 @@
     },
     "private": false,
     "dependencies": {
-        "amqplib": "^0.10.4",
+        "amqplib": "^0.10.8",
         "express": "^4.21.0",
         "jose": "^5.9.2",
         "zod": "^3.23.8"

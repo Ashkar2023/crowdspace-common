@@ -1,9 +1,9 @@
-import { Channel, connect, Connection } from "amqplib";
+import { Channel, ChannelModel, connect, Connection } from "amqplib";
 
 export class RabbitMQ {
     static #instance: RabbitMQ | null = null;
 
-    #connection: Connection | null = null;
+    #connection: ChannelModel | null = null;
     #ChannelMap = new Map<string, Channel>();
 
     private constructor() { }
@@ -11,8 +11,8 @@ export class RabbitMQ {
     /* Initialize RabbitMQ connection */
     async init(url: string) {
         this.#connection = await connect(url);
-        if (this.#connection.connection.serverProperties.cluster_name) {
-            console.log("rabbitmq cluster info: ", this.#connection.connection.serverProperties.cluster_name)
+        if (this.#connection.connection) {
+            console.log("rabbitmq cluster info: ", this.#connection.connection.serverProperties)
         }
     }
 
